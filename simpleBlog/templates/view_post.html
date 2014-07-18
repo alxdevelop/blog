@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
 
-{% block head_title %}
-{{ post.title }}
-{% endblock %}
+{% block head_title %}{{ post.title }} :: {{ name_website }}{% endblock %}
 
 
 {% block title %}
-{{ post.title }} 
+  {{ post.title }} 
 {% endblock %}
 
 {% block content %}

@@ -3,6 +3,17 @@ from django.db.models import permalink
 
 
 # Create your models here.
+
+#opciones para el sitio web por ejemplo, nombre y meta_description
+class Website(models.Model):
+    option = models.CharField(max_length=50)
+    value = models.CharField(max_length=250)
+
+    def __unicode__(self):
+        return '%s ' % self.option
+
+
+
 class Post(models.Model):
   title = models.CharField(max_length=100, unique=True)
   slug = models.SlugField(max_length=100, unique=True)
