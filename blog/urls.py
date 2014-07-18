@@ -8,5 +8,10 @@ urlpatterns = patterns('',
     # url(r'^$', 'blog.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    #Home
+    url(r'^$', 'simpleBlog.views.index', name="home"),
+    url(r'^blog/post/(?P<slug>[^\.]+).html', 'simpleBlog.views.view_post', name="view_blog_post"),
+    url(r'^blog/categoria/(?P<slug>[^\.]+).html', 'simpleBlog.views.view_category', name="view_blog_category"),
+
     url(r'^admin/', include(admin.site.urls)),
 )

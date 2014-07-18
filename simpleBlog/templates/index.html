@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Bienvenido a mi Blog {% endblock %}
+
+
+{% block content %}
+
+  <h2>Inicio</h2>
+
+  {% if posts %}
+
+    {% for post in posts %}
+    <article>
+      <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
+      <div class="contenido_post">
+        {{ post.content }}
+      </div>
+    </article>
+    {% endfor %}
+
+  {% else %}
+    <p>No hay post disponibles</p>
+  {% endif %}
+
+  {% if categories %}
+
+    <h2>Categorias</h2>
+
+    <ul>
+      {% for category in categories %}
+        <li>
+          <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+  {% endif %}
+
+{% endblock %}
