@@ -2,10 +2,7 @@
 
 
 
-{% block title %}
-<h1>{{ name_website }}</h1>
-<span>{{ slogan_website }}</span>
-{% endblock %}
+{% block title %}{{ name_website }}{% endblock %}
 
 
 {% block content %}
@@ -27,18 +24,5 @@
     <p>No hay post disponibles</p>
   {% endif %}
 
-  {% if categories %}
-
-    <h2>Categorias</h2>
-
-    <ul>
-      {% for category in categories %}
-        <li>
-          <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-
-  {% endif %}
 
 {% endblock %}

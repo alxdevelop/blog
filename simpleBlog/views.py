@@ -12,6 +12,7 @@ def index(request):
 
   return render_to_response( template,{
     'name_website' : name_website.value,
+    'slogan_website' : slogan_website.value,
     'title_website' : slogan_website.value,
     'description_website' : description_website.value,
     'categories' : categories,
