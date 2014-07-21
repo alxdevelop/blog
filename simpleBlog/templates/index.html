@@ -12,13 +12,25 @@
   {% if posts %}
 
     {% for post in posts %}
-    <article>
-      <a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
+    <article class="blog-post">
+      <a href="{{ post.get_absolute_url }}">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+      </a>
+      <p class="blog-post-meta">{{ post.posted }}</p>
       <div class="contenido_post">
         {{ post.content }}
       </div>
     </article>
     {% endfor %}
+
+    <ul class="pager">
+      <li>
+        <a href="#">Previous</a>
+      </li>
+      <li>
+        <a href="#">Next</a>
+      </li>
+    </ul>
 
   {% else %}
     <p>No hay post disponibles</p>
