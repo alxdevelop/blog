@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     #Home
     url(r'^$', 'simpleBlog.views.index', name="home"),
     url(r'^page/(?P<slug>[^\.]+)','pages.views.views_pages', name="views_pages"),
+    url(r'^blog/$', 'simpleBlog.views.blog', name="home_blog"),
+    url(r'^blog/page/(\d+)/$', 'simpleBlog.views.blog', name="home_blog_paginacion"),
     url(r'^blog/post/(?P<slug>[^\.]+)', 'simpleBlog.views.view_post', name="view_blog_post"),
     url(r'^blog/categoria/(?P<slug>[^\.]+)', 'simpleBlog.views.view_category', name="view_blog_category"),
 

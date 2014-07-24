@@ -10,7 +10,7 @@
     <h2 class="blog-post-title">{{ post.title }}</h2>
     <p class="blog-post-meta">{{ post.posted }}</p>
     <div class="contenido_post">
-      {{ post.content }}
+      {{ post.content | safe }}
     </div>
   </article>
 
